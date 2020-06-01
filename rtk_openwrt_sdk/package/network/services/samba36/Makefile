@@ -6,6 +6,7 @@
 #
 
 include $(TOPDIR)/rules.mk
+include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=samba
 PKG_VERSION:=3.6.24
@@ -62,6 +63,9 @@ define Package/samba36-server/description
 endef
 
 TARGET_CFLAGS += -DMAX_DEBUG_LEVEL=$(CONFIG_PACKAGE_SAMBA_MAX_DEBUG_LEVEL) -D__location__=\\\"\\\" -ffunction-sections -fdata-sections
+ifdef CONFIG_RTL_SENDFILE_PATCH
+TARGET_CFLAGS += -DCONFIG_RTL_SENDFILE_PATCH
+endif
 TARGET_LDFLAGS += -Wl,--gc-sections
 
 CONFIGURE_VARS += \

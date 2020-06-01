@@ -122,7 +122,7 @@ ifeq ($(CONFIG_TARGET_rtkmipsel_rtl8197f),y)
 ifeq ($(CONFIG_MTD_NAND_RTK),y)
 $(eval $(call SingleProfile,AP,ttyS0,38400,root=/dev/mtdblock3,0x80500000,800000,0))
 else
-$(eval $(call SingleProfile,AP,ttyS0,38400,root=/dev/mtdblock2,0x80500000,60000,20000))
+$(eval $(call SingleProfile,AP,ttyS0,38400,root=/dev/mtdblock2,0x80500000,30000,20000))
 endif
 endif 
 
