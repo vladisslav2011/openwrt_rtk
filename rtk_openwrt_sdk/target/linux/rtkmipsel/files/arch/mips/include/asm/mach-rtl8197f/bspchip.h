@@ -102,7 +102,7 @@
 /*
  * UART
  */
-#define BSP_UART0_BAUD		38400
+#define BSP_UART0_BAUD		115200
 #ifdef CONFIG_RTK_FPGA
 #define BSP_UART0_FREQ		(BSP_CPU0_FREQ/8) // switch
 //#define BSP_UART0_FREQ		(BSP_CPU0_FREQ*12/10) // USB OTG, pcie
